@@ -13,9 +13,7 @@ const Home = () => {
 
   return (
     <main className={styles.main}>
-      <div className={styles.title}>
-        Explore sample apps built with Assistants API
-      </div>
+      <div className={styles.title}>What's on your mind today?</div>
       <div className={styles.container}>
         {Object.entries(categories).map(([name, url]) => (
           <a key={name} className={styles.category} href={`/examples/${url}`}>
