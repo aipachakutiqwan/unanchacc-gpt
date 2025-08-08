@@ -1,19 +1,19 @@
 
 # unanchacc-gpt
 
-Welcome to the unanchacc-gpt, this is a conversational interface chatbot utilizing OpenAI's GPT-4o LLM as the backend engine.
+Welcome to unanchacc-gpt! This conversational chatbot is driven by OpenAI’s GPT-4o, bringing you natural, intelligent, and engaging interactions.
 
 ## ⚡ Introduction
 
-This repository provides a simple template for chatbot interface implementation, the backend chatbot provide streaming implementation. The chatbot  implements three types of tools:
+This repository offers a simple template for implementing a chatbot interface. The chatbot backend supports streaming responses and integrates three built-in tools:
 
-- Code Interpreter (https://platform.openai.com/docs/assistants/tools/code-interpreter)
-- File Search (https://platform.openai.com/docs/assistants/tools/file-search)
-- Function calling (https://platform.openai.com/docs/assistants/tools/function-calling)
+Code Interpreter – [Documentation](https://platform.openai.com/docs/assistants/tools/code-interpreter)
+File Search – [Documentation](https://platform.openai.com/docs/assistants/tools/file-search)
+Function Calling – [Documentation](https://platform.openai.com/docs/assistants/tools/function-calling)
 
-This implementation is a modification based on the publicly available Open AI implementation.
+This implementation is a modified version of OpenAI’s publicly available reference implementation.
 
-:heavy_exclamation_mark: **This repository code is not intended for direct use in production**. Do not use it as-is. It serves as a chatbot implementation. You should design a client/server chatbot architecture, refactor the code to fit your conversational experience requirements before considering it for any production deployment.
+:heavy_exclamation_mark: **This repository code is not intended for direct use in production**. This is a minimal chatbot template intended for demonstration purposes only. For production use, implement a robust client/server architecture and refactor the code to align with your conversational experience goals.
 
 
 ## :rocket: Setup
@@ -26,17 +26,15 @@ npm install
 
 ### 🌱 Setting up env variables
 You can use `.env` file for set the enviromental variables.
-Create an OpenAI API key at https://platform.openai.com/account/api-keys
-Create an OpenAI Assistant at https://platform.openai.com/assistants. Be sure to enable file search and code interpreter tools.
+Create an OpenAI API key at  [Open AI API Key](https://platform.openai.com/account/api-keys)
+Create an OpenAI Assistant at [Create Assistant](https://platform.openai.com/assistants). Be sure to enable file search and code interpreter tools.
 
 ```
-OPENAI_API_KEY=""
-OPENAI_ASSISTANT_ID=""
+OPENAI_API_KEY="SET_YOUR_API_KEY"
+OPENAI_ASSISTANT_ID="SET_YOUR_ASSISTANT_ID"
 ```
 
 ## ✅ How to Use
-
-:pushpin: Locally
 
 This initializes the Unanchacc chatbot in your local environment.
 ```
