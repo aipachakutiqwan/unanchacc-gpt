@@ -4,7 +4,7 @@ import styles from "./weather-widget.module.css";
 const WeatherWidget = ({
   location = "---",
   temperature = "---",
-  conditions = "Sunny",
+  conditions = "Wheater",
   isEmpty = false,
 }) => {
   const conditionClassMap = {
@@ -14,7 +14,6 @@ const WeatherWidget = ({
     Snowy: styles.weatherBGSnowy,
     Windy: styles.weatherBGWindy,
   };
-
   if (isEmpty) {
     return (
       <div className={`${styles.weatherWidget} ${styles.weatherEmptyState}`}>
@@ -25,20 +24,21 @@ const WeatherWidget = ({
       </div>
     );
   }
-
   const weatherClass = `${styles.weatherWidget} ${
     conditionClassMap[conditions] || styles.weatherBGSunny
   }`;
-
   return (
     <div className={weatherClass}>
       <div className={styles.weatherWidgetData}>
         <p>{location}</p>
-        <h2>{temperature !== "---" ? `${temperature}°F` : temperature}</h2>
+        <h2>
+          {temperature !== "---"
+            ? `${Math.round((temperature - 32) / 1.8)}°C`
+            : temperature}
+        </h2>
         <p>{conditions}</p>
       </div>
     </div>
   );
 };
-
 export default WeatherWidget;

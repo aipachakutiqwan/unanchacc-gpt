@@ -1,3 +1,12 @@
+
+# Create an OpenAI API key at https://platform.openai.com/account/api-keys
+OPENAI_API_KEY=""
+# Create an OpenAI Assistant at https://platform.openai.com/assistants.
+# IMPORTANT! Be sure to enable file search and code interpreter tools.
+OPENAI_ASSISTANT_ID=""
+
+
+
 # OpenAI Assistants API Quickstart
 
 A quick-start template using the OpenAI [Assistants API](https://platform.openai.com/docs/assistants/overview) with [Next.js](https://nextjs.org/docs).

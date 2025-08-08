@@ -6,7 +6,6 @@ import Chat from "../../components/chat";
 import WeatherWidget from "../../components/weather-widget";
 import { getWeather } from "../../utils/weather";
 import { RequiredActionFunctionToolCall } from "openai/resources/beta/threads/runs/runs";
-
 interface WeatherData {
   location?: string;
   temperature?: number;
@@ -16,7 +15,6 @@ interface WeatherData {
 const FunctionCalling = () => {
   const [weatherData, setWeatherData] = useState<WeatherData>({});
   const isEmpty = Object.keys(weatherData).length === 0;
-
   const functionCallHandler = async (call: RequiredActionFunctionToolCall) => {
     if (call?.function?.name !== "get_weather") return;
     const args = JSON.parse(call.function.arguments);
@@ -24,7 +22,6 @@ const FunctionCalling = () => {
     setWeatherData(data);
     return JSON.stringify(data);
   };
-
   return (
     <main className={styles.main}>
       <div className={styles.container}>

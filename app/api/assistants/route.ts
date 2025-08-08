@@ -8,7 +8,6 @@ export async function POST() {
     instructions: "You are a helpful assistant.",
     name: "Quickstart Assistant",
     model: "gpt-4o",
-    /*model: "gpt-5",*/
     tools: [
       { type: "code_interpreter" },
       {

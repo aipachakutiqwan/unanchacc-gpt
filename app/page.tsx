@@ -12,7 +12,6 @@ const Home = () => {
     */
     Chat: "all",
   };
-
   return (
     <main className={styles.main}>
       <div className={styles.title}>What's on your mind today?</div>
@@ -26,5 +25,4 @@ const Home = () => {
     </main>
   );
 };
-
 export default Home;

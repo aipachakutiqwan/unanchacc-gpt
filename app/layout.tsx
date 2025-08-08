@@ -18,7 +18,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {assistantId ? children : <Warnings />}
-        <img className="logo" src="/unanchaccgpt.svg" alt="OpenAI Logo" />
+        <img
+          className="logo"
+          src="/unanchaccgpt.svg"
+          alt="Unanchacc GPT Logo"
+        />
       </body>
     </html>
   );
