@@ -53,18 +53,17 @@ const Message = ({ role, text }: MessageProps) => {
 
 type ChatProps = {
   functionCallHandler?: (
-    toolCall: RequiredActionFunctionToolCall
+    toolCall: RequiredActionFunctionToolCall,
   ) => Promise<string>;
 };
 
 const Chat = ({
-  functionCallHandler = () => Promise.resolve(""), // default to return empty string
+  functionCallHandler = () => Promise.resolve(""),
 }: ChatProps) => {
   const [userInput, setUserInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [inputDisabled, setInputDisabled] = useState(false);
   const [threadId, setThreadId] = useState("");
-
   // automatically scroll to bottom of chat
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const scrollToBottom = () => {
@@ -94,7 +93,7 @@ const Chat = ({
         body: JSON.stringify({
           content: text,
         }),
-      }
+      },
     );
     const stream = AssistantStream.fromReadableStream(response.body);
     handleReadableStream(stream);
@@ -112,7 +111,7 @@ const Chat = ({
           runId: runId,
           toolCallOutputs: toolCallOutputs,
         }),
-      }
+      },
     );
     const stream = AssistantStream.fromReadableStream(response.body);
     handleReadableStream(stream);
@@ -142,7 +141,7 @@ const Chat = ({
   const handleTextDelta = (delta) => {
     if (delta.value != null) {
       appendToLastMessage(delta.value);
-    };
+    }
     if (delta.annotations != null) {
       annotateLastMessage(delta.annotations);
     }
@@ -151,7 +150,7 @@ const Chat = ({
   // imageFileDone - show image in chat
   const handleImageFileDone = (image) => {
     appendToLastMessage(`\n![${image.file_id}](/api/files/${image.file_id})\n`);
-  }
+  };
 
   // toolCallCreated - log new tool call
   const toolCallCreated = (toolCall) => {
@@ -168,7 +167,7 @@ const Chat = ({
 
   // handleRequiresAction - handle function call
   const handleRequiresAction = async (
-    event: AssistantStreamEvent.ThreadRunRequiresAction
+    event: AssistantStreamEvent.ThreadRunRequiresAction,
   ) => {
     const runId = event.data.id;
     const toolCalls = event.data.required_action.submit_tool_outputs.tool_calls;
@@ -177,7 +176,7 @@ const Chat = ({
       toolCalls.map(async (toolCall) => {
         const result = await functionCallHandler(toolCall);
         return { output: result, tool_call_id: toolCall.id };
-      })
+      }),
     );
     setInputDisabled(true);
     submitActionResult(runId, toolCallOutputs);
@@ -192,14 +191,11 @@ const Chat = ({
     // messages
     stream.on("textCreated", handleTextCreated);
     stream.on("textDelta", handleTextDelta);
-
     // image
     stream.on("imageFileDone", handleImageFileDone);
-
     // code interpreter
     stream.on("toolCallCreated", toolCallCreated);
     stream.on("toolCallDelta", toolCallDelta);
-
     // events without helpers yet (e.g. requires_action and run.done)
     stream.on("event", (event) => {
       if (event.event === "thread.run.requires_action")
@@ -236,17 +232,16 @@ const Chat = ({
         ...lastMessage,
       };
       annotations.forEach((annotation) => {
-        if (annotation.type === 'file_path') {
+        if (annotation.type === "file_path") {
           updatedLastMessage.text = updatedLastMessage.text.replaceAll(
             annotation.text,
-            `/api/files/${annotation.file_path.file_id}`
+            `/api/files/${annotation.file_path.file_id}`,
           );
         }
-      })
+      });
       return [...prevMessages.slice(0, -1), updatedLastMessage];
     });
-    
-  }
+  };
 
   return (
     <div className={styles.chatContainer}>

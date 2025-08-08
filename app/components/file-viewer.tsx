@@ -20,15 +20,12 @@ const TrashIcon = () => (
 
 const FileViewer = () => {
   const [files, setFiles] = useState([]);
-
   useEffect(() => {
     const interval = setInterval(() => {
       fetchFiles();
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
-
   const fetchFiles = async () => {
     const resp = await fetch("/api/assistants/files", {
       method: "GET",
@@ -36,14 +33,12 @@ const FileViewer = () => {
     const data = await resp.json();
     setFiles(data);
   };
-
   const handleFileDelete = async (fileId) => {
     await fetch("/api/assistants/files", {
       method: "DELETE",
       body: JSON.stringify({ fileId }),
     });
   };
-
   const handleFileUpload = async (event) => {
     const data = new FormData();
     if (event.target.files.length < 0) return;
@@ -53,7 +48,6 @@ const FileViewer = () => {
       body: data,
     });
   };
-
   return (
     <div className={styles.fileViewer}>
       <div

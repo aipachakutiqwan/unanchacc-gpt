@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /*background-color: white;*/
     background-color: #77bef0;
 }
 .title {
@@ -44,6 +43,5 @@
 }
 
 .category:hover {
-    /*background-color: #e3e3eb;*/
     background-color: #0046ff;
 }
