@@ -5,7 +5,7 @@ import { assistantId } from "./assistant-config";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Assistants API Quickstart",
+  title: "Unanchacc GPT",
   description:
     "A quickstart unanchacc-gpt template using the Assistants API with OpenAI",
   icons: {
