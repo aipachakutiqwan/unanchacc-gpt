@@ -4,7 +4,7 @@ import styles from "./weather-widget.module.css";
 const WeatherWidget = ({
   location = "---",
   temperature = "---",
-  conditions = "Sunny",
+  conditions = "Wheater",
   isEmpty = false,
 }) => {
   const conditionClassMap = {
