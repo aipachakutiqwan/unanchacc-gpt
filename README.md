@@ -7,9 +7,9 @@ Welcome to unanchacc-gpt! This conversational chatbot is driven by OpenAI’s GP
 
 This repository offers a simple template for implementing a chatbot interface. The chatbot backend supports streaming responses and integrates three built-in tools:
 
-Code Interpreter – [Documentation](https://platform.openai.com/docs/assistants/tools/code-interpreter)
-File Search – [Documentation](https://platform.openai.com/docs/assistants/tools/file-search)
-Function Calling – [Documentation](https://platform.openai.com/docs/assistants/tools/function-calling)
+- [Code Interpreter](https://platform.openai.com/docs/assistants/tools/code-interpreter)
+- [File Search](https://platform.openai.com/docs/assistants/tools/file-search)
+- [Function Calling](https://platform.openai.com/docs/assistants/tools/function-calling)
 
 This implementation is a modified version of OpenAI’s publicly available reference implementation.
 
@@ -26,8 +26,8 @@ npm install
 
 ### 🌱 Setting up env variables
 You can use `.env` file for set the enviromental variables.
-Create an OpenAI API key at  [Open AI API Key](https://platform.openai.com/account/api-keys)
-Create an OpenAI Assistant at [Create Assistant](https://platform.openai.com/assistants). Be sure to enable file search and code interpreter tools.
+- Create an OpenAI API key at  [Open AI API Key](https://platform.openai.com/account/api-keys).
+- Create an OpenAI Assistant at [Create Assistant](https://platform.openai.com/assistants). Be sure to enable file search and code interpreter tools.
 
 ```
 OPENAI_API_KEY="SET_YOUR_API_KEY"
