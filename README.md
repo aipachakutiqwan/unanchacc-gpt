@@ -3,7 +3,7 @@
 
 Welcome to unanchacc-gpt! This conversational chatbot is driven by OpenAI’s GPT-4o, bringing you natural, intelligent, and engaging interactions.
 
-## ⚡ Introduction
+## :pushpin: Introduction
 
 This repository offers a simple template for implementing a chatbot interface. The chatbot backend supports streaming responses and integrates three built-in tools:
 
